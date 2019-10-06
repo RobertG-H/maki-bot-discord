@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const siteURL = 'https://www.reddit.com/r/Pixiv/new/.json';
 const backupSiteURL = 'https://www.reddit.com/r/awwnime/.json'
 const prefix = '~';
-const githubRepo = 'https://github.com/RobertG-H/MakiBot-Discord/'
+const githubRepo = 'https://github.com/RobertG-H/maki-bot-vps/blob/master/README.md'
 
 // HTTP
 const request = require('request');
