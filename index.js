@@ -17,15 +17,15 @@ let connectionString = {
     port: 5432,
 };
 // checking to know the environment and suitable connection string to use
-if (env === 'development') {
-    // connectionString.database = secrets.database;
-} else {
-    console.log('Loading non dev database connection string');
-    connectionString = {
-        connectionString: process.env.DATABASE_URL,
-        ssl: true
-    };
-};
+// if (env === 'development') {
+//     // connectionString.database = secrets.database;
+// } else {
+//     console.log('Loading non dev database connection string');
+//     connectionString = {
+//         connectionString: process.env.DATABASE_URL,
+//         ssl: true
+//     };
+// };
 
 const pool = new Pool(connectionString);
 
