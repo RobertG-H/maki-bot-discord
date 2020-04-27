@@ -20,6 +20,7 @@ let connectionString = {
 if (env === 'development') {
     // connectionString.database = secrets.database;
 } else {
+    console.log('Loading non dev database connection string');
     connectionString = {
         connectionString: process.env.DATABASE_URL,
         ssl: true
@@ -27,7 +28,6 @@ if (env === 'development') {
 };
 
 const pool = new Pool(connectionString);
-pool.on('connect', () => console.log('connected to db'));
 
 // Bluebird for promises
 var Promise = require("bluebird");
@@ -307,7 +307,7 @@ client.on('message', message => {
             .then((collected) => {
                 const iterator1 = collected.entries()
                 const new_text_channel = iterator1.next().value.pop().content.split('!')[1]
-                console.log(message.guild.id)
+                // console.log(message.guild.id)
                 updateGuildTextChannel(message.guild.id, new_text_channel)
                 message.channel.send("Updated channel");
             })
