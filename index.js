@@ -269,7 +269,6 @@ client.on('message', message => {
     // BOTINFO
     else if (cmd === 'botinfo' || cmd === 'info') {
         let bicon = client.user.displayAvatarURL();
-
         let botembed = new Discord.MessageEmbed()
             .setDescription("All about me!")
             .setColor("#db404a")
@@ -333,21 +332,17 @@ client.on('message', message => {
                 message.channel.send("Subreddit update timeout...")
             });
     }
-    else if (cmd === 'post') {
-        console.log("trying to post");
-        sendPicture();
-    }
-    else if (cmd === 'trydb') {
-        // createGuild(123);
-        // updateGuildTextChannel(123, "test");
-        // updateGuildWebsiteUrl(123, 'https://www.reddit.com/dev/api#GET_api_me.json');
-        // createImageUrl(123, 'image.url')
-        // checkImageUrl(123, 'image.url')
-        // checkImageUrl(123, 'image.urll')
-        // deleteImageUrl(123, 'image.url')
-        // getGuildWebstieUrl(123)
-        postImageAllGuilds();
-    }
+    // else if (cmd === 'trydb') {
+    //     // createGuild(123);
+    //     // updateGuildTextChannel(123, "test");
+    //     // updateGuildWebsiteUrl(123, 'https://www.reddit.com/dev/api#GET_api_me.json');
+    //     // createImageUrl(123, 'image.url')
+    //     // checkImageUrl(123, 'image.url')
+    //     // checkImageUrl(123, 'image.urll')
+    //     // deleteImageUrl(123, 'image.url')
+    //     // getGuildWebstieUrl(123)
+    //     postImageAllGuilds();
+    // }
 });
 
 client.login(process.env.DISCORD_TOKEN);
@@ -355,10 +350,13 @@ client.login(process.env.DISCORD_TOKEN);
 // test bot: 
 // https://discordapp.com/api/oauth2/authorize?client_id=634368719023374336&permissions=3263488&scope=bot
 
-// Scheduler twice a day at 8AM and 8PM EST
-cron.schedule('0 13,1 * * *', function () {
-    sendPicture();
-});
+// Scheduler twice a day at 9AM and 9PM EST
+cron.schedule('0 11,21 * * *', function () {
+    postImageAllGuilds();
+}, {
+    scheduled: true,
+    timezone: "Canada/Eastern"
+  });
 
 // Scheduler to keep bot from falling asleep. Pings it self every 10min.
 cron.schedule('*/10 * * * *', function () {
