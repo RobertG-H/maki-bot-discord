@@ -1,0 +1,33 @@
+{
+  "name": "maki-bot-discord",
+  "version": "2.0.0",
+  "description": "Image posting Discord bot",
+  "main": "index.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertG-H/maki-bot-discord.git"
+  },
+  "author": "Robert Graham-Hu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RobertG-H/maki-bot-discord/issues"
+  },
+  "homepage": "https://github.com/RobertG-H/maki-bot-discord#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.1.0",
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "discord.js": "^12.2.0",
+    "ffmpeg-static": "^4.1.1",
+    "node-cron": "^2.0.3",
+    "pg": "^8.0.3"
+  }
+}
