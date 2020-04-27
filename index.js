@@ -346,16 +346,18 @@ client.on('message', message => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
-// permissions interger: 3197952
+// permissions interger: 36822016
 // test bot: 
-// https://discordapp.com/api/oauth2/authorize?client_id=634368719023374336&permissions=3263488&scope=bot
+// https://discordapp.com/api/oauth2/authorize?client_id=634368719023374336&permissions=36822016&scope=bot
+// Real bot:
+// https://discordapp.com/api/oauth2/authorize?client_id=704336136478392321&permissions=36822016&scope=bot
 
 // Scheduler twice a day at 9AM and 9PM EST
 cron.schedule('0 11,21 * * *', function () {
     postImageAllGuilds();
 }, {
     scheduled: true,
-    timezone: "Canada/Eastern"
+    timezone: "America/New_York"
   });
 
 // Scheduler to keep bot from falling asleep. Pings it self every 10min.
