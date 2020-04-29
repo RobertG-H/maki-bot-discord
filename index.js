@@ -353,7 +353,7 @@ client.login(process.env.DISCORD_TOKEN);
 // https://discordapp.com/api/oauth2/authorize?client_id=704336136478392321&permissions=36822016&scope=bot
 
 // Scheduler twice a day at 9AM and 9PM EST
-cron.schedule('0 11,21 * * *', function () {
+cron.schedule('0 8,20 * * *', function () {
     postImageAllGuilds();
 }, {
     scheduled: true,
