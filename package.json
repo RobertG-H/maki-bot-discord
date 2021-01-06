@@ -23,7 +23,7 @@
   "homepage": "https://github.com/RobertG-H/maki-bot-discord#readme",
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "discord.js": "^12.2.0",
     "ffmpeg-static": "^4.1.1",
